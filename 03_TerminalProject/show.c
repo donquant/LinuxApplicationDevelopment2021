@@ -4,7 +4,8 @@
 #include <locale.h>
 #include <ncurses.h>
 
-#define ESC 27 
+#define ESC 27
+#define SPACE 32
 
 void show(FILE * f, const char * f_name);
 void update(FILE * f, WINDOW * w, int rows, int cols);
@@ -41,7 +42,7 @@ void update(FILE * f, WINDOW * w, int rows, int cols){
     }
 
     while ((s = wgetch(w)) != ESC){
-        if (s == 32){
+        if (s == SPACE){
             for (int i = 0; i < cols; i++){
                 if ((s = fgetc(f)) != EOF)
                     wprintw(w, "%c", s);
