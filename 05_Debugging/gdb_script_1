@@ -2,7 +2,7 @@ set pagination off
 set logging on
 b 61 if i % 5 == 0
     commands
-    printf "@@@ %d %d %d %d\n", start, stop, step, i
+    printf "start = %d, stop = %d, step = %d, i = %d\n", start, stop, step, i
     c
 end
 r 1 12 > /dev/null

@@ -3,7 +3,7 @@ set logging on
 set $j = 0
 b 75 if $j++ > 27 && $j < 37
     commands 
-    printf "@@@ %d %d %d %d\n", start, stop, step, i
+    printf "start = %d, stop = %d, step = %d, i = %d\n", start, stop, step, i
     c
 end
 r -100 100 3 > /dev/null
