@@ -5,18 +5,21 @@
 
 #define SYNTAX_ERR "SyntaxError: range arguments must be represented as integers, for example as 73 or -101"
 
-const char help[] = "\nusage: range arg1 [ arg2 arg3 ]\n\n" 
-                    "range returns a sequence of integers from start (inclusive) to stop (exclusive) by step.\n"
-                    "range i j produces\n"
-                    "i\n"
-                    "i+1\n"
-                    "...\n"
-                    "j-1.\n"
-                    "start defaults to 0, and stop is omitted!\n"  
-                    "range 3 produces\n" 
-                    "0\n"
-                    "1\n"
-                    "2.\n";
+void print_help(void){
+    const char help[] = "\nusage: range arg1 [ arg2 arg3 ]\n\n" 
+                        "range returns a sequence of integers from start (inclusive) to stop (exclusive) by step.\n"
+                        "range i j produces\n"
+                        "i\n"
+                        "i+1\n"
+                        "...\n"
+                        "j-1.\n"
+                        "start defaults to 0, and stop is omitted!\n"  
+                        "range 3 produces\n" 
+                        "0\n"
+                        "1\n"
+                        "2.\n";
+    puts(help);
+}
 
 int parse(const char * string){
 
@@ -40,19 +43,21 @@ int parse(const char * string){
 }
 
 int main(int argc, char **argv){
-    
+
+    int i;
     if(argc == 1)
-        puts(help);
+        print_help();
     else if(argc == 2){
-        int stop = parse(argv[1]);
-        int i;
-        for(i = 0; i < stop; i++)
+        int start = 0;
+        int stop  = parse(argv[1]);
+        int step  = 1;
+        for(i = start; i < stop; i += step)
             printf("%d\n", i); 
     }else if(argc == 3){
         int start = parse(argv[1]);
         int stop  = parse(argv[2]);
-        int i;
-        for(i = start; i < stop; i++)
+        int step  = 1;
+        for(i = start; i < stop; i += step)
             printf("%d\n", i); 
     }else if(argc == 4){
         int start = parse(argv[1]);
@@ -62,7 +67,6 @@ int main(int argc, char **argv){
             puts("ValueError: range arg3 must not be zero");
             exit(EXIT_FAILURE);
         }
-        int i;
         if (start > stop && step < 0)
             for(i = start; i > stop; i += step)
                 printf("%d\n", i);
@@ -71,7 +75,7 @@ int main(int argc, char **argv){
                 printf("%d\n", i);
     }else{
         puts("SyntaxError: more than 3 arguments were given");
-        puts(help);
+        print_help();
         exit(EXIT_FAILURE);
     }
     return 0;
