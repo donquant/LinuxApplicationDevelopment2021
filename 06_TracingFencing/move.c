@@ -57,6 +57,9 @@ int main(int argc, char *argv[]){
             fprintf(stderr, "errno = %i: %s\n" , errno, strerror(errno));
             exit(EXIT_FAILURE);
         }
+    } else {
+        fprintf(stderr, "Usage: %s filename_1 filename_2\n" , argv[0]);
+        exit(EXIT_FAILURE);
     }
 
     return 0;  

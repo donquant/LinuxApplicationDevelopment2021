@@ -20,3 +20,6 @@ test: move sub.so
 	cmp PROTECTed_infile outfile 
 	rm PROTECTed_infile outfile 
 
+test_err: move
+	truncate -s 1m infile
+	strace -e fault=open:error=ENOENT ./move infile outfile
