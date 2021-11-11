@@ -14,8 +14,7 @@ AC_ARG_WITH([readline], [AS_HELP_STRING([--without-readline], [Disable readline]
 
 # Checks for libraries.
 AS_IF([test "x$with_readline" != xno], [AC_CHECK_LIB([readline], [readline])])
-AC_CHECK_LIB([rhash], [rhash_library_init], [], [AC_MSG_ERROR([Unable to find librhash])
-])
+AC_CHECK_LIB([rhash], [rhash_library_init], [], [AC_MSG_ERROR([Unable to find librhash])])
 
 # Checks for header files.
 AC_CHECK_HEADER([rhash.h])
