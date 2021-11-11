@@ -18,20 +18,20 @@ int getHash(const char* input, char* output, int crypto, int base);
 int main(void) {
 	
     rhash_library_init();
-	char* line = NULL;
-	ssize_t line_len;
-	char output[130];	
-	while ((line_len = receiveLine(&line)) > 1) {
+    char* line = NULL;
+    ssize_t line_len;
+    char output[130];	
+    while ((line_len = receiveLine(&line)) > 1) {
 	
-    	const char* crypto_name = strtok(line, " ");
-		int crypto;
+        const char* crypto_name = strtok(line, " ");
+        int crypto;
         int output_base;
         size_t input_len;
         int hash_out;
 
         /* Select crypto algorithm */
-		if (strcasecmp(crypto_name, "tth") == 0) {
-			crypto = RHASH_TTH;
+        if (strcasecmp(crypto_name, "tth") == 0) {
+            crypto = RHASH_TTH;
 		} else if (strcasecmp(crypto_name, "sha1") == 0) {
 			crypto = RHASH_SHA1;
 		} else if (strcasecmp(crypto_name, "md5") == 0) {
