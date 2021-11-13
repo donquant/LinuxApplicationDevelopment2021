@@ -31,10 +31,10 @@ int main(void) {
         int hash_out;
 
         /* Check that number of arguments is bigger than one */
-        if(input == NULL){
+        if (input == NULL) {
             printf("No second parameter was given: %s", crypto_name);
             continue;
-        } else if(input[0] == '\n'){
+        } else if (input[0] == '\n') {
             printf("No second parameter was given: %s\n", crypto_name);
             continue;
         }
