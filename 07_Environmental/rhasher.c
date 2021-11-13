@@ -24,10 +24,20 @@ int main(void) {
     while ((line_len = receiveLine(&line)) > 1) {
 	
         const char* crypto_name = strtok(line, " ");
+        char* input = strtok(NULL, " \t");
         int crypto;
         int output_base;
         size_t input_len;
         int hash_out;
+
+        /* Check that number of arguments is bigger than one */
+        if(input == NULL){
+            printf("No second parameter was given: %s", crypto_name);
+            continue;
+        } else if(input[0] == '\n'){
+            printf("No second parameter was given: %s\n", crypto_name);
+            continue;
+        }
 
         /* Select crypto algorithm */
         if (strcasecmp(crypto_name, "tth") == 0) {
@@ -45,7 +55,6 @@ int main(void) {
         output_base = (isupper(crypto_name[0])) ? RHPR_HEX : RHPR_BASE64 ;
 
         /* hash computation and printing */
-        char* input = strtok(NULL, " ");
         input_len = strlen(input);
         if (input[input_len - 1] == '\n')
             input[input_len - 1] = '\0';
@@ -57,9 +66,9 @@ int main(void) {
 }
 
 size_t receiveLine(char** line) {
+    size_t n;
 #ifdef HAVE_LIBREADLINE
     free(*line);
-    size_t len_of_line;
     char* check;
     if (isatty(STDIN_FILENO)) {
         check = "$ ";
@@ -71,10 +80,9 @@ size_t receiveLine(char** line) {
     *line = readline(check);
     if (*line == NULL) return 0;
     add_history(*line);
-    len_of_line = strlen(*line);
-    return len_of_line;
+    n = strlen(*line);
+    return n;
 #else
-    size_t n;
     return getline(line, &n, stdin);
 #endif
 }
