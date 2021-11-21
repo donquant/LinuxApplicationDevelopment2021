@@ -51,7 +51,7 @@ int main(int argc, char ** argv) {
      *
      */
 
-    if ((res = regcomp(&regex, re, REG_EXTENDED))) {
+    if ((res = regcomp(&regex, re, REG_EXTENDED | REG_NEWLINE ))) {
 
         size_t size = regerror(res, &regex, (char*) NULL, (size_t) 0); /* size of error string */
         err_malloc(&err, size);
