@@ -38,6 +38,9 @@ int main(int argc, char ** argv) {
     int esc = 0;
     size_t pid;
 
+    if (str == NULL)
+        str = "";
+
     /* 
      *  int regncomp(regex_t *restrict preg, const char *restrict pattern, size_t len, int cflags);
      *  
@@ -60,7 +63,7 @@ int main(int argc, char ** argv) {
     }
     
     n = regex.re_nsub;
-    regmatch_t m[n];
+    regmatch_t m[n + 1];
 
     /*
      * int regexec(const regex_t *restrict preg, const char *restrict string, 
