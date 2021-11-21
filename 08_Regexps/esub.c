@@ -22,7 +22,7 @@ void print_match(int start, int end, char *str) {
 
 int main(int argc, char ** argv) {
 
-    if(argc < 3){
+    if(argc < 4){
         fprintf(stderr, "usage: %s regexp substitution string\n", argv[0]);
         exit(EXIT_FAILURE);    
     }
