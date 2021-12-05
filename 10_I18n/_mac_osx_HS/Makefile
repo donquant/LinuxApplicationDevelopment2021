@@ -2,8 +2,8 @@ CFLAGS = -Wall -Wextra
 
 all: guessInt ru/LC_MESSAGES/ru.mo
 
-guessInt: guessInt.c libintl.h
-	gcc $(CFLAGS) /opt/local/lib/libintl.dylib $< -o $@
+guessInt: guessInt.c
+	gcc $(CFLAGS) -I /opt/local/include /opt/local/lib/libintl.dylib $< -o $@
 
 guessInt.pot: guessInt.c
 	xgettext --keyword=_ --language=C --add-comments --sort-output $< -o tmp.pot
