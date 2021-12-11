@@ -1,0 +1,72 @@
+# Russian translations for guess program.
+# Copyright (C) 2021 THE guess COPYRIGHT HOLDER
+# This file is distributed under the same license as the guessInt program.
+# Evgeny Laba <dasurfspot@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: guess 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-11 14:20+0300\n"
+"PO-Revision-Date: 2021-12-11 14:21+0300\n"
+"Last-Translator: Evgeny Laba <dasurfspot@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: guess.c:149
+#, c-format
+msgid "Is your integer bigger than %d ?\n"
+msgstr "Ваше число больше чем %d ?\n"
+
+#: guess.c:147
+#, c-format
+msgid "Is your integer bigger than %s ?\n"
+msgstr "Ваше число больше чем %s ?\n"
+
+#: guess.c:186
+#, c-format
+msgid "Program recognizes only y or n as input\n"
+msgstr "Программа распознаёт только y или n в качестве ответа\n"
+
+#: guess.c:133
+#, c-format
+msgid "Select an integer from %d to %d\n"
+msgstr "Выбирете целое число от %d до %d\n"
+
+#: guess.c:116
+#, c-format
+msgid ""
+"Usage: guess [OPTION...]\n"
+"guess - a program guessing number from 0 to 100\n"
+"\n"
+"  -i, --info                 Give multilingual help list\n"
+"  -r, --roman                Use roman numerals\n"
+"  -?, --help                 Give this help list\n"
+"      --usage                Give a short usage message\n"
+"  -V, --version              Print program version\n"
+"\n"
+msgstr ""
+"Использование: guess [ОПЦИИ...]\n"
+"guess - программа угадывающая целое число от 0 до 100\n"
+"\n"
+"  -i, --info                 Выдаёт многоязыковую документацию\n"
+"  -r, --roman                Представляет числа в римском формате\n"
+"  -?, --help                 Выдаёт встроенную в argp помощь\n"
+"      --usage                Выдаёт встроенный в argp пример использования\n"
+"  -V, --version              Выдаёт версию программы\n"
+"\n"
+
+#: guess.c:141 guess.c:160 guess.c:177
+#, c-format
+msgid "Your integer is %d\n"
+msgstr "Ваше число - %d\n"
+
+#: guess.c:139 guess.c:158 guess.c:175
+#, c-format
+msgid "Your integer is %s\n"
+msgstr "Ваше число - %s\n"
