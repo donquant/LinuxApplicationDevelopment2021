@@ -1,4 +1,4 @@
-AM_CFLAGS = -Wall -Wextra -DLOCALE_PATH='"$(localedir)"'
+AM_CFLAGS = -Wall -Wextra -DLOCALEDIR='"$(localedir)"'
 bin_PROGRAMS=guess
 pkgdata_DATA=ru/LC_MESSAGES/guess.mo
 pkgdatadir = $(localedir)/ru/LC_MESSAGES
