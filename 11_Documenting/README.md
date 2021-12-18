@@ -1,4 +1,4 @@
-### Документирование 
+### Documenting 
 
-Конфигурируется всё это безобразие с помощью `autoreconf -fsiv`.
-Далее `./configure` и  `make`.
+Initial config `autoreconf -fsiv`.
+Then `./configure` and `make`.
